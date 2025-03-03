@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: COSYNE 2025 Workshop on Learning fast and slow: Mechanisms for multi-timescale behavioral flexibility
+title: ""
 email: jsacks6@cs.washington.edu
 description: >- # this means to ignore newlines until "baseurl:"
   COSYNE 2025 Workshop on Learning fast and slow: Mechanisms for multi-timescale behavioral flexibility
@@ -28,7 +28,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: minima
 plugins:
   - jekyll-feed
 
