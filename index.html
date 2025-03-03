@@ -94,7 +94,7 @@
         }
 
         section {
-            padding: 4rem 2rem;
+            padding: 2rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
             text-align: justify;
@@ -110,7 +110,7 @@
             background-color: #f9f9f9;
             border-radius: 8px;
             overflow-x: auto;
-            max-width: 1000px; /* Add max-width to constrain table size */
+            max-width: 1200px; /* Add max-width to constrain table size */
             margin: 0 auto; /* Center the schedule container */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds subtle shadow */
         }
@@ -118,13 +118,24 @@
         .schedule table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1rem 0; /* Add vertical margin inside the schedule container */
         }
 
         .schedule th, .schedule td {
             padding: 1rem 1.5rem; /* Increased horizontal padding */
             text-align: left;
             border-bottom: 1px solid #ddd;
+        }
+
+        .schedule th.time {
+        	width: 15%;
+        }
+
+        .schedule th.title {
+        	width: 45%;
+        }
+
+        .schedule th.speaker {
+        	width: 20%;
         }
 
         .schedule th {
@@ -219,7 +230,7 @@
 			<br><br>
 			<ol type="1">
 			  <li><b>Learning rules:</b> differentiated based on feedback structure (e.g., supervised, unsupervised, reinforcement learning), activity dependence, and brain regions.</li>
-			  <li><b>Evolution of neural population activity:</b>, with an emphasis on changes to latent dynamical structure and representational geometry that support new task-relevant computations.</li>
+			  <li><b>Evolution of neural population activity:</b> with an emphasis on changes to latent dynamical structure and representational geometry that support new task-relevant computations.</li>
 			</ol>
 			<br>
 			A discussion on distributed and multi-timescale learning mechanisms is particularly timely due to recent advances in three key areas: (1) the ability to chronically monitor and perturb large neural populations, including multiple brain areas simultaneously, (2) the explosion of statistical and machine learning tools to extract structure from high-dimensional behavioral and neural data, and (3) insights from training artificial neural networks with bio-inspired architectures on increasingly complex behaviors.
@@ -229,4 +240,262 @@
 			We will try to work towards a more holistic understanding of biological learning by re-emphasizing behavioral modeling, formalizing dynamics of multi-site plasticity, and incorporating a diversity of dense and sparse teaching signals.
         </p>
     </section>
+
+    <section id="schedule"></section>
+        <h2>Schedule (Day 1)</h2>
+        <div class="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time">Time</th>
+                        <th class="title">Title</th>
+                        <th class="speaker">Speaker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:30 - 9:40 AM</td>
+                        <td>Introduction</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>9:40 - 10:15 AM</td>
+                        <td>Complementary goal and prediction-driven learning systems in a model of mammalian sensorimotor brain regions</td>
+                        <td>Laureline Logiaco, Massachusetts Institute of Technology</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>10:15 - 10:50 AM</td>
+                        <td>Combining slow-fast learning systems: a cortico-cerebellar viewpoint</td>
+                        <td>Rui Ponte Costa, University of Oxford</td>
+                    </tr>
+                    <td>10:50 - 11:20 AM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:20 - 11:55 AM</td>
+                        <td>A distributed learning framework for multi region RNNs</td>
+                        <td>Alex Cayco Gajic, École Normale Supérieure</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:55 - 12:30 PM</td>
+                        <td>Approaching sensorimotor learning from another angle: How cognitive strategies shape skill acquisition</td>
+                        <td>Jordan A. Taylor, Princeton University</td>
+                    </tr>
+                    <td>12:30 - 3:30 PM</td>
+                        <td>Lunch</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>3:30 - 4:05 PM</td>
+                        <td>Model-based discovery of empowerment-optimal synergies</td>
+                        <td>James Heald, University College London</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>4:05 - 4:40 PM</td>
+                        <td>Learning to learn in complex, multi-choice environments</td>
+                        <td>Ashesh Dhawale, Indian Institute of Science, Bangalore</td>
+                    </tr>
+                    <td>4:40 - 5:10 PM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>5:10 - 5:45 PM</td>
+                        <td>Engram formation in connected networks</td>
+                        <td>Tim Vogels, Institute of Science and Technology, Austria</td>
+                    </tr>
+                    <tr>
+                        <td>5:45 - 6:30 PM</td>
+                        <td>Panel Discussion: Normative and mechanistic basis of arbitration between different learning mechanisms</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <h2>Schedule (Day 2)</h2>
+        <div class="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time">Time</th>
+                        <th class="title">Title</th>
+                        <th class="speaker">Speaker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:30 - 9:40 AM</td>
+                        <td>Introduction</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>9:40 - 10:15 AM</td>
+                        <td>Principles of Learning in Hippocampal Cognitive Maps: From State Machines to Neural Manifolds</td>
+                        <td>Weinan Sun, Cornell University</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>10:15 - 10:50 AM</td>
+                        <td>Latent state inference for multi-timescale learning</td>
+                        <td>Flora Bouchacourt, Brown University</td>
+                    </tr>
+                    <td>10:50 - 11:20 AM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:20 - 11:55 AM</td>
+                        <td>Learning and exploiting sensory statistics with and without feedback</td>
+                        <td>Athena Akrami, University College London</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:55 - 12:30 PM</td>
+                        <td>Rapid emergence of latent knowledge in the sensory cortex drive learning</td>
+                        <td>Celine Drieu, Johns Hopkins University</td>
+                    </tr>
+                    <td>12:30 - 3:30 PM</td>
+                        <td>Lunch</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>3:30 - 4:05 PM</td>
+                        <td>Fast and slow population-level mechanisms of learning in the motor cortex</td>
+                        <td>Jacob Sacks, University of Washington</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>4:05 - 4:40 PM</td>
+                        <td>Neural representations for visual discrimination and generalization</td>
+                        <td>Miguel Angel Nuñez Ochoa, Janelia Research Campus</td>
+                    </tr>
+                    <td>4:40 - 5:10 PM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>5:10 - 5:45 PM</td>
+                        <td>How prior experiences shape learning of complex tasks</td>
+                        <td>Cristina Savin, New York University</td>
+                    </tr>
+                    <tr>
+                        <td>5:45 - 6:30 PM</td>
+                        <td>Panel Discussion: Successes and challenges with experimental identification or validation of learning mechanisms</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+  	<section id="speakers">
+    	<h2>Speakers</h2>
+    	<div class="grid">
+    		<div class="person">
+                <img src="images/laureline-logiaco.jpeg" alt="Speaker 1, Day 1">
+                <h3>Laureline Logiaco</h3>
+                <p>Massachusetts Instituve of Technology</p>
+            </div>
+            <div class="person">
+                <img src="images/rui-ponte-costa.jpeg" alt="Speaker 2, Day 1">
+                <h3><a href="https://www.dpag.ox.ac.uk/team/rui-ponte-costa" target="_blank">Rui Ponte Costa</a></h3>
+                <p>University of Oxford</p>
+            </div>
+            <div class="person">
+                <img src="images/alex-cayco-gajic.jpeg" alt="Speaker 3, Day 1">
+                <h3><a href="https://sites.google.com/view/caycogajic/home" target="_blank">Alex Cayco Gajic</a></h3>
+                <p>École Normale Supérieure</p>
+            </div>
+            <div class="person">
+                <img src="images/jordan-taylor.jpeg" alt="Speaker 4, Day 1">
+                <h3><a href="https://psychology.princeton.edu/people/jordan-taylor" target="_blank">Jordan A. Taylor</a></h3>
+                <p>Princeton University</p>
+            </div>
+            <div class="person">
+                <img src="images/james-heald.jpeg" alt="Speaker 5, Day 1">
+                <h3><a href="https://jamesheald.github.io/" target="_blank">James Heald</a></h3>
+                <p>University College London</p>
+            </div>
+            <div class="person">
+                <img src="images/ashesh-dhawale.jpeg" alt="Speaker 6, Day 1">
+                <h3><a href="https://cns.iisc.ac.in/people/ashesh-dhawale/" target="_blank">Ashesh Dhawale</a></h3>
+                <p>Indian Institute of Science, Bangalore</p>
+            </div>
+            <div class="person">
+                <img src="images/tim-vogels.jpeg" alt="Speaker 7, Day 1">
+                <h3><a href="https://vogelslab.org/" target="_blank">Tim Vogels</a></h3>
+                <p>Institute of Science and Technology, Austria</p>
+            </div>
+            <div class="person">
+                <img src="images/weinan-sun.jpg" alt="Speaker 1, Day 2">
+                <h3><a href="https://nbb.cornell.edu/weinan-sun" target="_blank">Weinan Sun</a></h3>
+                <p>Cornell University</p>
+            </div>
+            <div class="person">
+                <img src="images/flora-bouchacourt.jpg" alt="Speaker 2, Day 2">
+                <h3><a href="http://florabouchacourt.com/" target="_blank">Flora Bouchacourt</a></h3>
+                <p>Brown University</p>
+            </div>
+            <div class="person">
+                <img src="images/athena-akrami.jpeg" alt="Speaker 3, Day 2">
+                <h3><a href="https://www.sainsburywellcome.org/web/people/athena-akrami" target="_blank">Athena Akrami</a></h3>
+                <p>University College London</p>
+            </div>
+            <div class="person">
+                <img src="images/celine-drieu.jpg" alt="Speaker 4, Day 2">
+                <h3>Celine Drieu</h3>
+                <p>Johns Hopkins University</p>
+            </div>
+            <div class="person">
+                <img src="images/jacob-sacks.png" alt="Speaker 5, Day 2">
+                <h3><a href="https://jisacks.github.io/" target="_blank">Jacob Sacks</a></h3>
+                <p>University of Washington</p>
+            </div>
+            <div class="person">
+                <img src="images/miguel-ochoa.jpeg" alt="Speaker 6, Day 2">
+                <h3><a href="https://www.janelia.org/people/miguel-angel-nunez" target="_blank">Miguel Angel Nuñez Ochoa</a></h3>
+                <p>Janelia Research Campus</p>
+            </div>
+            <div class="person">
+                <img src="images/cristina-savin.jpeg" alt="Speaker 7, Day 2">
+                <h3><a href="https://csavin.wixsite.com/savinlab" target="_blank">Cristina Savin</a></h3>
+                <p>New York University</p>
+            </div>
+   		</div>
+    </section>
+
+    <section id="organizers">
+        <h2>Organizers</h2>
+        <div class="grid">
+        	<div class="person">
+                <img src="images/jacob-sacks.png" alt="Organizer">
+                <h3><a href="https://jisacks.github.io/" target="_blank">Jacob Sacks</a></h3>
+                <p>University of Washington</p>
+            </div>
+            <div class="person">
+                <img src="images/harsha-gurnani.jpg" alt="Organizer">
+                <h3><a href="https://harshagurnani.github.io/" target="_blank">Harsha Gurnani</a></h3>
+                <p>University of Washington</p>
+            </div>
+            <div class="person">
+                <img src="images/matthew-golub.jpg" alt="Organizer">
+                <h3><a href="https://homes.cs.washington.edu/~mgolub/" target="_blank">Matthew D. Golub</a></h3>
+                <p>University of Washington</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+    	<h2>Additional Information</h2>
+        <div class="info">
+            <p>With consent from speakers, we will record the workshop and make the video available to the public. Check back for more information.</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
+</html>
