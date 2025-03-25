@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+		* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+		h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end; /* Ensure nav content is right-aligned */
+            min-height: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0 2rem;
+            width: auto; /* Remove the full width constraint */
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .banner {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: #000;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* 30% opaque black overlay */
+            z-index: 1;
+        }
+
+		.banner img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom; /* Aligns image to bottom */
+            opacity: 1; /* Changed from 0.7 since we're using overlay */
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2; /* Increased z-index to appear above the overlay */
+        }
+
+        .banner h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        section {
+            padding: 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .schedule {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow-x: auto;
+            max-width: 1200px; /* Add max-width to constrain table size */
+            margin: 0 auto; /* Center the schedule container */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds subtle shadow */
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule th, .schedule td {
+            padding: 1rem 1.5rem; /* Increased horizontal padding */
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule th.time {
+        	width: 15%;
+        }
+
+        .schedule th.title {
+        	width: 45%;
+        }
+
+        .schedule th.speaker {
+        	width: 20%;
+        }
+
+        .schedule th {
+            background-color: #333;
+            color: white;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Changed from auto-fit to 3 columns */
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1200px; /* Optional: adds a max-width to ensure consistent layout */
+            margin-left: auto; /* Optional: centers the grid */
+            margin-right: auto; /* Optional: centers the grid */
+        }
+
+        .person {
+            text-align: center;
+        }
+
+        .person img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .info {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 1rem;
+            }
+
+            .banner h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .speaker-row {
+            background-color: #f0f2f5;  /* Light grayish-blue color */
+        }
+
+        /* Ensure hover effect for better interaction */
+        .speaker-row:hover {
+            background-color: #e5e8ed;  /* Slightly darker on hover */
+        }
+
+	    section ol {
+	      font-family: Arial, sans-serif; /* Change the font */
+	      list-style-type: decimal; /* Default numbering style */
+	      padding: 0rem 2rem;
+	    }
+	</style>
+</head>
+
+<body>
+	 <nav>
+	 	<ul>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#organizers">Organizers</a></li>
+        </ul>
+    </nav>
+
+    <div class="banner">
+        <img src="images/fairmont-night-winter.jpg" alt="Workshop Banner">
+        <div class="banner-content" style="color: #f5f5f5;">
+            <h1>
+            	<b style="font-size: 1.5em;">COSYNE 2025 Workshop</b>
+                <br>Learning Fast and Slow: Mechanisms for Multi-Timescale Behavioral Flexibility
+            </h1>
+            <p style="font-size: 1.5em;"><i>March 31st - April 1st, 2025</i></p>
+            <p style="font-size: 1.25em;">Co-organized by Harsha Gurnani, Jake Sacks, and Matthew Golub</p>
+        </div>
+    </div>
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <p style="max-width: 100%; margin: 0 auto;">
+			Learning in the brain is a complex process occurring over multiple timescales, from rapid adaptation to prolonged practice-dependent changes. Rapid motor adaptation, statistical learning, even one-shot learning happens within minutes or hours, whereas slower processes, like acquiring new motor skills, perceptual priors, and complex cognitive abilities, may take days, weeks, or even longer. Often, these learning processes have been studied in isolation. However, animals and their brains do not operate with clear boundaries between different learning types, especially in dynamic and unpredictable environments. Instead, learning can occur on a continuum of timescales and depend on interrelated neural mechanisms, with differential recruitment of parallel or sequential processes across tasks. By integrating perspectives from both fast and slow learning paradigms, this workshop seeks to uncover the underlying principles that govern this continuum, the specific roles played by various brain regions and circuits, as well as how to experimentally disambiguate between learning processes. 
+			<br><br>
+			Two common frameworks will be used to guide discussion and unify insights from multiple perspectives: 
+			<br><br>
+			<ol type="1">
+			  <li><b>Learning rules:</b> differentiated based on feedback structure (e.g., supervised, unsupervised, reinforcement learning), activity dependence, and brain regions.</li>
+			  <li><b>Evolution of neural population activity:</b> with an emphasis on changes to latent dynamical structure and representational geometry that support new task-relevant computations.</li>
+			</ol>
+			<br>
+			A discussion on distributed and multi-timescale learning mechanisms is particularly timely due to recent advances in three key areas: (1) the ability to chronically monitor and perturb large neural populations, including multiple brain areas simultaneously, (2) the explosion of statistical and machine learning tools to extract structure from high-dimensional behavioral and neural data, and (3) insights from training artificial neural networks with bio-inspired architectures on increasingly complex behaviors.
+			<br><br>
+			The workshop is designed for experimentalists and theoreticians working across different neural systems, with the goal of fostering not only the exchange of empirical findings but also mathematical tools and methodologies for studying learning mechanisms. This includes a discussion of identifiability issues and other challenges of fitting models to behavioral data, neural recordings, and perturbation experiments. This broader community can inspire new theory-guided experimental designs for testing specific predictions and enable the integration of theory and data on multiple levels – behavior, population activity structure, and cellular mechanisms. We will also discuss more conceptual questions such as the distributed nature of learning, what governs the dominance (if any) of different learning mechanisms or circuits, and when such degeneracy may lead to competitive or synergistic interactions. 
+			<br><br>
+			We will try to work towards a more holistic understanding of biological learning by re-emphasizing behavioral modeling, formalizing dynamics of multi-site plasticity, and incorporating a diversity of dense and sparse teaching signals.
+        </p>
+    </section>
+
+    <section id="schedule"></section>
+        <h2>Schedule (Day 1)</h2>
+        <div class="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time">Time</th>
+                        <th class="title">Title</th>
+                        <th class="speaker">Speaker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:30 - 9:40 AM</td>
+                        <td>Introduction</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>9:40 - 10:15 AM</td>
+                        <td>Complementary goal and prediction-driven learning systems in a model of mammalian sensorimotor brain regions</td>
+                        <td>Laureline Logiaco, Massachusetts Institute of Technology</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>10:15 - 10:50 AM</td>
+                        <td>Fast, flexible and slow learning: a cortico-cerebellar perspective</td>
+                        <td>Rui Ponte Costa, University of Oxford</td>
+                    </tr>
+                    <td>10:50 - 11:20 AM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:20 - 11:55 AM</td>
+                        <td>A distributed learning framework for multi region RNNs</td>
+                        <td>Alex Cayco Gajic, École Normale Supérieure</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:55 - 12:30 PM</td>
+                        <td>Approaching sensorimotor learning from another angle: How cognitive strategies shape skill acquisition</td>
+                        <td>Jordan A. Taylor, Princeton University</td>
+                    </tr>
+                    <td>12:30 - 3:30 PM</td>
+                        <td>Lunch</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>3:30 - 4:05 PM</td>
+                        <td>Model-based discovery of empowerment-optimal synergies</td>
+                        <td>James Heald, University College London</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>4:05 - 4:40 PM</td>
+                        <td>Learning to learn in complex, multi-choice environments</td>
+                        <td>Ashesh Dhawale, Indian Institute of Science, Bangalore</td>
+                    </tr>
+                    <td>4:40 - 5:10 PM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>5:10 - 5:45 PM</td>
+                        <td>Engram formation in connected networks</td>
+                        <td>Tim Vogels, Institute of Science and Technology, Austria</td>
+                    </tr>
+                    <tr>
+                        <td>5:45 - 6:30 PM</td>
+                        <td>Panel Discussion: Normative and mechanistic basis of arbitration between different learning mechanisms</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <h2>Schedule (Day 2)</h2>
+        <div class="schedule">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="time">Time</th>
+                        <th class="title">Title</th>
+                        <th class="speaker">Speaker</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:30 - 9:40 AM</td>
+                        <td>Introduction</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>9:40 - 10:15 AM</td>
+                        <td>Principles of Learning in Hippocampal Cognitive Maps: From State Machines to Neural Manifolds</td>
+                        <td>Weinan Sun, Cornell University</td>
+                    </tr>
+                    <tr>
+                        <td>10:15 - 11:50 AM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:20 - 11:55 AM</td>
+                        <td>Learning and exploiting sensory statistics with and without feedback</td>
+                        <td>Athena Akrami, University College London</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>11:55 - 12:30 PM</td>
+                        <td>Rapid emergence of latent knowledge in the sensory cortex drive learning</td>
+                        <td>Kishore Kuchibotla, Johns Hopkins University</td>
+                    </tr>
+                    <td>12:30 - 3:30 PM</td>
+                        <td>Lunch</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>3:30 - 4:05 PM</td>
+                        <td>Fast and slow population-level mechanisms of learning in the motor cortex</td>
+                        <td>Jacob Sacks, University of Washington</td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>4:05 - 4:40 PM</td>
+                        <td>Neural representations for visual discrimination and generalization</td>
+                        <td>Miguel Angel Nuñez Ochoa, Janelia Research Campus</td>
+                    </tr>
+                    <td>4:40 - 5:10 PM</td>
+                        <td>Break</td>
+                        <td></td>
+                    </tr>
+                    <tr class="speaker-row">
+                        <td>5:10 - 5:45 PM</td>
+                        <td>How prior experiences shape learning of complex tasks</td>
+                        <td>Cristina Savin, New York University</td>
+                    </tr>
+                    <tr>
+                        <td>5:45 - 6:30 PM</td>
+                        <td>Panel Discussion: Successes and challenges with experimental identification or validation of learning mechanisms</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+  	<section id="speakers">
+    	<h2>Speakers</h2>
+    	<div class="grid">
+    		<div class="person">
+                <img src="images/laureline-logiaco.png" alt="Speaker 1, Day 1">
+                <h3>Laureline Logiaco</h3>
+                <p>Massachusetts Instituve of Technology</p>
+            </div>
+            <div class="person">
+                <img src="images/rui-ponte-costa.jpeg" alt="Speaker 2, Day 1">
+                <h3><a href="https://www.dpag.ox.ac.uk/team/rui-ponte-costa" target="_blank">Rui Ponte Costa</a></h3>
+                <p>University of Oxford</p>
+            </div>
+            <div class="person">
+                <img src="images/alex-cayco-gajic.jpeg" alt="Speaker 3, Day 1">
+                <h3><a href="https://sites.google.com/view/caycogajic/home" target="_blank">Alex Cayco Gajic</a></h3>
+                <p>École Normale Supérieure</p>
+            </div>
+            <div class="person">
+                <img src="images/jordan-taylor.jpeg" alt="Speaker 4, Day 1">
+                <h3><a href="https://psychology.princeton.edu/people/jordan-taylor" target="_blank">Jordan A. Taylor</a></h3>
+                <p>Princeton University</p>
+            </div>
+            <div class="person">
+                <img src="images/james-heald.jpeg" alt="Speaker 5, Day 1">
+                <h3><a href="https://jamesheald.github.io/" target="_blank">James Heald</a></h3>
+                <p>University College London</p>
+            </div>
+            <div class="person">
+                <img src="images/ashesh-dhawale.jpeg" alt="Speaker 6, Day 1">
+                <h3><a href="https://cns.iisc.ac.in/people/ashesh-dhawale/" target="_blank">Ashesh Dhawale</a></h3>
+                <p>Indian Institute of Science, Bangalore</p>
+            </div>
+            <div class="person">
+                <img src="images/tim-vogels.jpeg" alt="Speaker 7, Day 1">
+                <h3><a href="https://vogelslab.org/" target="_blank">Tim Vogels</a></h3>
+                <p>Institute of Science and Technology, Austria</p>
+            </div>
+            <div class="person">
+                <img src="images/weinan-sun.jpg" alt="Speaker 1, Day 2">
+                <h3><a href="https://nbb.cornell.edu/weinan-sun" target="_blank">Weinan Sun</a></h3>
+                <p>Cornell University</p>
+            </div>
+            <div class="person">
+                <img src="images/athena-akrami.jpeg" alt="Speaker 3, Day 2">
+                <h3><a href="https://www.sainsburywellcome.org/web/people/athena-akrami" target="_blank">Athena Akrami</a></h3>
+                <p>University College London</p>
+            </div>
+            <div class="person">
+                <img src="images/kuchibhotla-kishore.jpg" alt="Speaker 4, Day 2">
+                <h3><a href="https://pbs.jhu.edu/directory/kishore-kuchibhotla/" target="_blank">Kishore Kuchibhotla</a></h3>
+                <p>Johns Hopkins University</p>
+            </div>
+            <div class="person">
+                <img src="images/jacob-sacks.png" alt="Speaker 5, Day 2">
+                <h3><a href="https://jisacks.github.io/" target="_blank">Jacob Sacks</a></h3>
+                <p>University of Washington</p>
+            </div>
+            <div class="person">
+                <img src="images/miguel-ochoa.jpeg" alt="Speaker 6, Day 2">
+                <h3><a href="https://www.janelia.org/people/miguel-angel-nunez" target="_blank">Miguel Angel Nuñez Ochoa</a></h3>
+                <p>Janelia Research Campus</p>
+            </div>
+            <div class="person">
+                <img src="images/cristina-savin.jpeg" alt="Speaker 7, Day 2">
+                <h3><a href="https://csavin.wixsite.com/savinlab" target="_blank">Cristina Savin</a></h3>
+                <p>New York University</p>
+            </div>
+   		</div>
+    </section>
+
+    <section id="organizers">
+        <h2>Organizers</h2>
+        <div class="grid">
+        	<div class="person">
+                <img src="images/jacob-sacks.png" alt="Organizer">
+                <h3><a href="https://jisacks.github.io/" target="_blank">Jacob Sacks</a></h3>
+                <p>University of Washington</p>
+            </div>
+            <div class="person">
+                <img src="images/harsha-gurnani.jpg" alt="Organizer">
+                <h3><a href="https://harshagurnani.github.io/" target="_blank">Harsha Gurnani</a></h3>
+                <p>University of Washington</p>
+            </div>
+            <div class="person">
+                <img src="images/matthew-golub.png" alt="Organizer">
+                <h3><a href="https://homes.cs.washington.edu/~mgolub/" target="_blank">Matthew D. Golub</a></h3>
+                <p>University of Washington</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+    	<h2>Additional Information</h2>
+        <div class="info">
+            <p>With consent from speakers, we will record the workshop and make the video available to the public. Check back for more information.</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
